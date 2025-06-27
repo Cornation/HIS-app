@@ -14,6 +14,7 @@
 					<view class="box-bd" v-if="hasLogin">
 						<view class="item">
 							<!-- <view class="icon"><img src="../../../static/user/message.png"></view> -->
+							<!--  -->
 							<view class="text">病历号:{{this.medicalRecordNo}}</view>
 						</view>
 						<view class="item">
