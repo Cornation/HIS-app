@@ -11,6 +11,7 @@
 							<text class="uer-name">{{hasLogin ? "Hi，"+name : '您尚未登录'}}</text>
 						</view>
 					</view>
+					<!--  -->
 					<view class="box-bd" v-if="hasLogin">
 						<view class="item">
 							<!-- <view class="icon"><img src="../../../static/user/message.png"></view> -->
