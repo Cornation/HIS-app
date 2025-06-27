@@ -7,7 +7,6 @@
 						<view class="avator">
 							<img class="logo-img" :src="hasLogin ? logUrl : logoutUrl">
 						</view>
-						<!--  -->
 						<view class="phone-number">
 							<text class="uer-name">{{hasLogin ? "Hi，"+name : '您尚未登录'}}</text>
 						</view>
