@@ -145,8 +145,7 @@
 					}
 				}
 			}
-		}
-		,{
+		}, {
 			"path": "pages/component/view/view",
 			"style": {
 				"navigationBarTitleText": "view"
@@ -382,12 +381,23 @@
 			"style": {
 				"navigationBarTitleText": "问题反馈"
 			}
+		}, {
+			"path": "pages/his/login/login",
+			"style": {}
+		},
+		{
+			"path": "pages/his/aiChat/aiChat",
+			"style": {
+				"navigationBarTitleText": ""
+			}
+		},
+		{
+			"path": "pages/his/chat/chat",
+			"style": {
+				"navigationBarTitleText": ""
+			}
 		}
-	    ,{
-            "path" : "pages/his/login/login",
-            "style" : {}
-        }
-    ],
+	],
 	"subPackages": [{
 			"root": "pages/extUI",
 			"pages": [{

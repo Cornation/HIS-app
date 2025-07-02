@@ -6,7 +6,8 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
 	state: {
 		// url: 'localhost:9999',
-		url: '192.168.75.23:10013',
+		id: null,
+		url: '172.20.10.2:10013',
 		hasLogin: false,
 		name: '',
 		patientId: '',
@@ -21,28 +22,34 @@ const store = new Vuex.Store({
 		login(state, provider) {
 			state.hasLogin = true;
 			state.name = provider.name;
-			state.patientId = provider.id;
-			state.idCard = provider.identificationNo;
+			state.patientId = provider.patientId || provider.id;
+			state.idCard = provider.idCard || provider.identificationNo;
 			state.homeAddress = provider.homeAddress;
 			state.phoneNo = provider.phoneNo;
 			state.medicalRecordNo = provider.medicalRecordNo;
 			state.dateOfBirth = provider.dateOfBirth;
-			if(provider.gender == 0){
+			const genderCode = provider.gender;
+			if (genderCode === 0 || genderCode === '0') {
 				state.gender = '男';
-			}else if(provider.gender == 1){
+			} else if (genderCode === 1 || genderCode === '1') {
 				state.gender = '女';
+			} else if (provider.gender === '男' || provider.gender === '女') {
+				state.gender = provider.gender;
 			}
 		},
 		logout(state) {
 			state.hasLogin = false;
-			name = '';
-			patientId: '';
-			idCard: '';
-			homeAddress: '';
-			phoneNo: '';
-			gender: '';
-			medicalRecordNo: ''
+			state.name = '';
+			state.patientId = '';
+			state.idCard = '';
+			state.homeAddress = '';
+			state.phoneNo = '';
+			state.gender = '';
+			state.medicalRecordNo = '';
+			state.dateOfBirth = '';
+			uni.removeStorageSync('userInfo'); // 同步清除本地缓存
 		}
+
 	},
 	actions: {
 		// lazy loading openid

@@ -1,0 +1,118 @@
+/*
+ *  uni-app 全局样式表
+ *  作者:helang
+ *  邮箱:helang.love@qq.com
+*/
+
+/* 根元素样式 设置页面背景、字体大小、字体颜色，字符间距、长单词换行 */
+page {
+  background-color: #f3f3f3;
+  font-size: 28rpx;
+  box-sizing: border-box;
+  color: #333;
+  letter-spacing: 0;
+  word-wrap: break-word;
+}
+
+/* 设置常用元素尺寸规则 */
+view,textarea,input,label,form,button,image{box-sizing: border-box;}
+/* 按钮样式处理 */
+button{font-size: 28rpx;}
+/* 取消按钮默认的边框线效果 */
+button:after{border:none;}
+/* 设置图片默认样式，取消默认尺寸 */
+image{display: block;height: auto;width: auto;}
+/* 输入框默认字体大小 */
+textarea,input{font-size: 28rpx;};
+
+/* 列式弹性盒子 */
+.flex-col {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+}
+/* 行式弹性盒子 */
+.flex-row {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+ 
+/* 弹性盒子弹性容器 */
+.flex-col>view.flex-grow{width:0;flex-grow: 1;}
+.flex-row>view.flex-grow{height:0;flex-grow: 1;}
+ 
+/* 弹性盒子允许换行 */
+.flex-col.flex-wrap{flex-wrap: wrap;}
+ 
+/* 弹性盒子居中对齐 */
+.flex-col.flex-center,.flex-row.flex-center{justify-content: center;}
+ 
+/* 列式弹性盒子两端对齐 */
+.flex-col.flex-space{justify-content: space-between;}
+
+/* 弹性盒子快速分栏 ,这里非常郁闷 uniapp 居然不支持 * 选择器 */
+.flex-col.flex-col-2>view{width: 50%;}
+.flex-col.flex-col-3>view{width: 33.33333%;}
+.flex-col.flex-col-4>view{width: 25%;}
+.flex-col.flex-col-5>view{width: 20%;}
+.flex-col.flex-col-6>view{width: 16.66666%;}
+
+/* 字体颜色 */
+.color-333 {color: #333;}
+.color-666 {color: #666;}
+.color-999 {color: #999;}
+.color-ccc {color: #ccc;}
+.color-fff {color: #fff;}
+.color-6dc{color: #6dca6d;}
+.color-d51{color: #d51917;}
+.color-09f{color: #0099ff;}
+ 
+/* 背景色*/
+.bg-fff{background-color: #ffffff;}
+ 
+/* 字体大小 */
+.size-10 {font-size: 20rpx;}
+.size-12 {font-size: 24rpx;}
+.size-14 {font-size: 28rpx;}
+.size-16 {font-size: 32rpx;}
+.size-18 {font-size: 36rpx;}
+.size-20 {font-size: 40rpx;}
+ 
+/* 字体加粗 */
+.font-b{font-weight: bold;}
+ 
+/* 对齐方式 */
+.align-c{text-align: center;}
+.align-l{text-align: left;}
+.align-r{text-align: right;}
+ 
+/* 遮罩 */
+.shade{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.8);
+  z-index: 100;
+}
+ 
+/* 弹窗 */
+.shade-box{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  z-index: 101;
+  min-width: 200rpx;
+  min-height: 200rpx;
+}

@@ -56,7 +56,7 @@
 				var data  = {}
 				data.name = this.searchinput
 				var [error, res] = await uni.request({
-					url: 'http://192.168.75.23:10009/dept/select?pageSize=1000&pageNum=1',
+					url: 'http://172.20.10.2:9999/dept/select?pageSize=1000&pageNum=1',
 					data:data,
 					method:'post'
 				});
@@ -112,7 +112,7 @@
 			},
 			async getCategory() {
 				var [error, res] = await uni.request({
-					url: 'http://192.168.75.23:10009/appRegistration/listAllDept',
+					url: 'http://172.20.10.2:9999/appRegistration/listAllDept',
 					method: 'GET'
 				});
 				if(error != null && error.errMsg=="request:fail"){

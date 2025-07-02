@@ -8,7 +8,7 @@
 							<img class="logo-img" :src="hasLogin ? logUrl : logoutUrl">
 						</view>
 						<view class="phone-number">
-							<text class="uer-name">{{hasLogin ? "Hi，"+name : '您尚未登录'}}</text>
+							<text class="uer-name">{{hasLogin ? "你好，"+name : '您尚未登录'}}</text>
 						</view>
 					</view>
 					<!--  -->
@@ -19,7 +19,7 @@
 						</view>
 						<view class="item">
 							<!-- <view class="icon"><img src="../../../static/user/service.png"></view> -->
-							<view class="text">身份证号{{this.idCard}}</view>
+							<view class="text">身份证号:{{this.idCard}}</view>
 						</view>
 					</view>
 				</view>

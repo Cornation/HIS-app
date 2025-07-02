@@ -37,7 +37,7 @@
 			}
 		},
 		computed: {
-			...mapState(['url','hasLogin', 'name', 'patientId', 'idCard', 'homeAddress', 'phoneNo', 'gender', 'medicalRecordNo'])
+			...mapState(['url','hasLogin', 'name', ,'id', 'patientId', 'idCard', 'homeAddress', 'phoneNo', 'gender', 'medicalRecordNo'])
 		},
 		onLoad() {
 			this.webUrl = this.$store.state.url;
@@ -82,6 +82,19 @@
 						}
 						console.log(res.data.data);
 						this.login(res.data.data);	//登录成功保存基本信息
+						// 本地持久化保存
+						uni.setStorageSync('userInfo', {
+							hasLogin: true,
+							name: res.data.data.name,
+							id: res.data.data.id,
+							age: res.data.data.age,
+							identificationNo: res.data.data.identificationNo,
+							homeAddress: res.data.data.homeAddress,
+							phoneNo: res.data.data.phoneNo,
+							gender: res.data.data.gender,
+							medicalRecordNo: res.data.data.medicalRecordNo,
+							
+						});
 						uni.navigateBack({			//登录后返回上一级页面
 							delta: 1
 						});
